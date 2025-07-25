@@ -5,10 +5,13 @@
   },
   "extensionBundle": {
     "id": "Microsoft.Azure.Functions.ExtensionBundle",
-    "version": "[2.*, 3.0.0)"
+    "version": "[4.*, 5.0.0)"
   },
-  "extensions": {},
-  "logging": {
-    "fileLoggingMode": "never"
+  "functionTimeout": "00:10:00",
+  "extensions": {
+    "durableTask": {
+      "maxConcurrentActivityFunctions": 5,
+      "maxConcurrentOrchestratorFunctions": 2
+    }
   }
 }
